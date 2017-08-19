@@ -2,6 +2,9 @@
 /diseno
 /material
 /referencias
-.bak
-.DS_Store
+/dev
+*.ai
+*.psd
+*.bak
+*.DS_Store
 
