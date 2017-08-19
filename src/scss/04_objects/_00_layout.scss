@@ -1,0 +1,71 @@
+// Flexbox Layout
+
+/* ---------------- [ Variables ] ---------------- */
+
+$o-layout__gutter: 15px;
+$o-layout__columns: 12;
+
+$o-layout__breakpoints: (
+  'md': $s-breakpoint--sm,
+  'lg': $s-breakpoint--md,
+  'xl': $s-breakpoint--lg
+);
+
+/* ---------------- [ Style ] ---------------- */
+
+.o-container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 $o-layout__gutter * 2;
+
+  // Responsive
+  @each $key, $value in $o-layout__breakpoints {
+    @media (min-width: map-get($s-breakpoints,$key)) {
+      max-width: map-get($o-layout__breakpoints,$key);
+      padding: 0 $o-layout__gutter;
+    }
+  }
+
+}
+
+.o-row {
+  margin-left: -$o-layout__gutter;
+  margin-right: -$o-layout__gutter;
+  display: flex;
+  flex: 1 0 auto;
+  flex-wrap: wrap;
+
+  &--align-self-stretch {
+    align-self: stretch;
+  }
+
+  &--align-items-center {
+    align-items: center;
+    align-content: center;
+  }
+
+  &--align-items-stretch {
+    align-items: stretch;
+  }
+}
+
+.o-col {
+  display: flex;
+  flex: 1 1 auto;
+  padding: 0 $o-layout__gutter;
+  z-index: 1;
+
+  &--align-self-stretch {
+    align-self: stretch;
+  }
+
+  &--align-items-center {
+    align-items: center;
+    align-content: center;
+  }
+
+  &--align-items-stretch {
+    align-items: stretch;
+  }
+
+}

@@ -1,0 +1,106 @@
+// Utilities
+
+/*----------------[ variables ]----------------*/
+
+$u-debug : false;
+
+/*----------------[ style ]----------------*/
+
+// Sizing
+.u-full-height {
+  position: relative;
+  min-height: 100%;
+}
+
+// Font size
+@each $key, $value in $s-font-sizes {
+  .u-font-size-#{$key} {
+    @include font-size($value);
+  }
+}
+
+// Font weight
+.u-font-weight-normal {
+  font-weight: 400;
+}
+
+.u-font-weight-bold {
+  font-weight: 500;
+}
+
+// Color
+@each $key, $value in $s-brand-colors {
+  .u-color-#{$key}{
+    color: $value;
+  }
+}
+@each $key, $value in $s-color-greyscale {
+  .u-color-grey-#{$key}{
+    color: $value;
+  }
+}
+
+.u-color-light {
+  color: $s-color-light;
+}
+
+
+.u-color-dark {
+  color: $s-color-dark;
+}
+
+// Background-color
+@each $key, $value in $s-brand-colors {
+  .u-background-color-#{$key}{
+    background-color: $value;
+  }
+}
+
+@each $key,$value in $s-color-greyscale {
+  .u-background-color-grey-#{$key}{
+    background-color: $value;
+  }
+}
+
+// Text alignment
+.u-align-right {
+  text-align: right;
+}
+.u-align-center {
+  text-align: center;
+}
+.u-align-left {
+  text-align: left;
+}
+
+// Image sizing
+.u-img-max-100 {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+.u-img-100 {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+// Margin
+.u-no-margin {
+  margin: 0;
+}
+
+// Padding
+.u-no-padding {
+  padding: 0;
+}
+
+// Debug
+
+@if $u-debug {
+
+  *[class] {
+    @include outlineRecursive('*[class]',transparentize(coral,.6),80deg,6);
+  }
+
+}

@@ -1,0 +1,27 @@
+//- variables
+
+- var theme = 'default'
+
+//- html
+
+doctype
+html(lang='es')
+  head
+    meta(charset='utf-8')
+    title Alejandro Sotoca Pinilla | Portfolio
+    link(rel="stylesheet" href="assets/css/main.css")
+  body(class="c-body "+theme)
+    
+    //- header
+    include _partials/header.pug
+    
+    //- sub-header
+    include _partials/sub-header.pug
+    
+    //-  main-content
+    section(class="o-container")
+      p hola
+    
+    //- footer
+        
+    

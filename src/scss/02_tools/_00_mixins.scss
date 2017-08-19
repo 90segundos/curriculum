@@ -1,0 +1,36 @@
+/*************************************
+
+    Mixins
+
+**************************************/
+
+// font-size
+@mixin font-size($font-size: $s-font-size-sm, $line-height : ''){
+
+  @if $line-height == '' {
+    $line-height: round($font-size * 1.2);
+  }
+
+  font-size: $font-size;
+  line-height: $line-height;
+
+}
+
+// Animation
+@mixin animation($param) {
+    @each $key, $value in $param {
+      #{animation-}#{$key}:#{$value};
+    }
+}
+
+
+// Debug recursive outline
+@mixin outlineRecursive($element,$color,$degrees,$depth){
+  @if $depth > 1 {
+    & > #{$element} {
+      $current_color : adjust-hue($color, $degrees);
+      outline: solid 1px $current_color;
+      @include outlineRecursive($element,$current_color,$degrees,$depth - 1);
+    }
+  }
+}

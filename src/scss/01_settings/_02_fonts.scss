@@ -1,0 +1,19 @@
+// Fonts
+
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:300,400|Varela');
+$s-font-body: 'Ubuntu', sans-serif;
+$s-font-heading: 'Varela', sans-serif;
+
+// Sizing
+$s-font-size-xs: 13px;
+$s-font-size-sm: 15px;
+$s-font-size-md: 18px;
+$s-font-size-lg: 24px;
+$s-font-size-xl: 32px;
+
+$s-font-sizes: (
+  'sm':$s-font-size-sm,
+  'md':$s-font-size-md,
+  'lg':$s-font-size-lg,
+  'xl':$s-font-size-xl
+);

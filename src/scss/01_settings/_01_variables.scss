@@ -1,0 +1,85 @@
+// Global variables
+
+// Breakpoints
+
+$s-breakpoint--sm: 576px;
+$s-breakpoint--md: 768px;
+$s-breakpoint--lg: 992px;
+$s-breakpoint--xl: 1200px;
+
+$s-breakpoints: (
+  'sm': $s-breakpoint--sm,
+  'md': $s-breakpoint--md,
+  'lg': $s-breakpoint--lg,
+  'xl': $s-breakpoint--xl
+);
+
+// Color
+$s-color-dark: #222222;
+$s-color-light: #ffffff;
+
+$s-color-grey-02: lighten($s-color-dark, 98);
+$s-color-grey-04: lighten($s-color-dark, 96);
+$s-color-grey-06: lighten($s-color-dark, 94);
+$s-color-grey-08: lighten($s-color-dark, 92);
+$s-color-grey-10: lighten($s-color-dark, 90);
+$s-color-grey-20: lighten($s-color-dark, 80);
+$s-color-grey-30: lighten($s-color-dark, 70);
+$s-color-grey-40: lighten($s-color-dark, 60);
+$s-color-grey-50: lighten($s-color-dark, 50);
+$s-color-grey-60: lighten($s-color-dark, 40);
+$s-color-grey-70: lighten($s-color-dark, 30);
+$s-color-grey-80: lighten($s-color-dark, 20);
+$s-color-grey-90: lighten($s-color-dark, 10);
+
+$s-color-greyscale: (
+  '02': $s-color-grey-02,
+  '04': $s-color-grey-04,
+  '06': $s-color-grey-06,
+  '08': $s-color-grey-08,
+  '10': $s-color-grey-10,
+  '20': $s-color-grey-20,
+  '30': $s-color-grey-30,
+  '40': $s-color-grey-40,
+  '50': $s-color-grey-50,
+  '60': $s-color-grey-60,
+  '70': $s-color-grey-70,
+  '80': $s-color-grey-80,
+  '90': $s-color-grey-90
+);
+
+$s-color-primary: #009982;
+$s-color-primary-light: lighten($s-color-primary, 10%);
+$s-color-primary-dark: desaturate(darken($s-color-primary,10%), 10);
+
+$s-color-secondary: #eeb64a;
+$s-color-secondary-light: lighten($s-color-secondary, 10%);
+$s-color-secondary-dark: desaturate(darken($s-color-secondary,10%), 10);
+
+$s-color-tertiary: #ee5555;
+$s-color-tertiary-light: lighten($s-color-tertiary, 10%);
+$s-color-tertiary-dark: desaturate(lighten($s-color-tertiary,10%), 10);
+
+$s-brand-colors: (
+  'primary' : $s-color-primary,
+  'primary-light' : $s-color-primary-light,
+  'primary-dark' : $s-color-primary-dark,
+  'secondary' : $s-color-secondary,
+  'secondary-light' : $s-color-secondary-light,
+  'secondary-dark' : $s-color-secondary-dark,
+  'tertiary' : $s-color-tertiary,
+  'tertiary-light' : $s-color-tertiary-light,
+  'tertiary-dark' : $s-color-tertiary-dark
+);
+
+// background
+$s-background-color: $s-color-light;
+$s-background-color--reversed: $s-color-dark;
+
+// text color
+$s-text-color: $s-color-light;
+$s-text-color--grey: $s-color-grey-60;
+
+// header
+
+$s-header-height: 80px;

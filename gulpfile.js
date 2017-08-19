@@ -8,8 +8,6 @@ var gulp = require('gulp'),
     autoprefixer = require('gulp-autoprefixer'),
     cleanCss = require('gulp-clean-css'),
     concat = require('gulp-concat'),
-    imagemin = require('gulp-imagemin'),
-    //uglify = require('gulp-uglify'),
     notify = require("gulp-notify");
 
 /* ---------------------[ directories ]----------------------- */
@@ -22,9 +20,7 @@ var directories = {
   'sass_src':   ['src/scss/*.scss'],
   'sass_build': 'build/assets/css',
   'js_src':     ['src/js/**/*.js'],
-  'js_build':   'build/assets/js',
-  'img_src':    'build/assets/img',
-  'img_build':  'build/assets/img'
+  'js_build':   'build/assets/js'
 }
 
 /* ---------------------[ tasks ]----------------------- */
@@ -50,14 +46,6 @@ gulp.task('compile_sass', function () {
     .pipe(notify("CSS generated"));
 });
 
-// img_minify
-gulp.task('img_minify', function () {
-  return gulp.src(directories.img_src)
-    .pipe(imagemin())
-    .pipe(gulp.dest(directories.img_build))
-    .pipe(notify("Images compressed"));
-});
-
 // concat_scripts
 gulp.task('scripts', function() {
   return gulp.src(directories.js_src)
@@ -77,7 +65,7 @@ gulp.task('watch', function () {
 /* ---------------------[ task collections ]----------------------- */
 
 // build
-gulp.task('build', ['compile_pug','compile_sass','img_minify','scripts']);
+gulp.task('build', ['compile_pug','compile_sass', 'scripts']);
 
 // default
 gulp.task('default', ['compile_pug', 'compile_sass', 'scripts', 'watch']);

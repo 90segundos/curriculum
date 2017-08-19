@@ -1,0 +1,14 @@
+// Component
+// body
+
+/*----------------[ variables ]----------------*/
+
+$c-header__background-color: #202020;
+
+/*----------------[ style ]----------------*/
+
+.c-body {
+  padding-top: $s-header-height;
+  background-color: $c-header__background-color;
+  color: $s-text-color;
+}

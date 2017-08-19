@@ -1,0 +1,84 @@
+// Component
+// header
+
+/*----------------[ variables ]----------------*/
+
+// header
+$c-header__height: $s-header-height;
+$c-header__background-color: #282828;
+$c-header__color: #ffffff;
+
+// sub-header
+$c-sub-header__height: 100px;
+$c-sub-header__background-color: #242424;
+
+/*----------------[ style ]----------------*/
+
+.c-header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  // Responsive
+  @each $key, $value in $o-layout__breakpoints {
+    @media (min-width: map-get($s-breakpoints,$key)) {
+      max-width: map-get($o-layout__breakpoints,$key);
+    }
+  }
+}
+
+.c-header__container {
+  height: $c-header__height;
+  background-color: $c-header__background-color;
+  color: $c-header__color;
+}
+
+.c-logo {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 300;
+  @include font-size(15px, 17px);
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  &:after {
+    content: " /";
+  }
+}
+
+
+// sub-header
+
+.c-sub-header {
+
+}
+
+.c-sub-header__nav {
+  height: $c-sub-header__height;
+  background-color: $c-sub-header__background-color;
+}
+
+.c-sub-header__item {
+  padding-bottom: 15px;
+  position: relative;
+
+  &:after {
+    content:"";
+    height: 2px;
+    width: 40px;
+    background-color: $s-color-grey-60;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+}
+
+.c-sub-header__link {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 300;
+  @include font-size(15px, 20px);
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  &:after {
+    content: " /";
+  }
+}
