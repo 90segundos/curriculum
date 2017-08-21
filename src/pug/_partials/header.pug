@@ -1,7 +1,13 @@
 header(class="o-container c-header")
   //- Primer elemento con display flex - mantiene la altura del conjunto.
   div(class="o-row o-row--align-items-stretch c-header__container")
-    div(class="o-col o-col--align-items-center")
-      h1(class="c-logo") Alejandro <br>Sotoca <br> Pinilla
-    div(class="o-col") dos
-    div(class="o-col") tres
+    div(class="o-col o-col--flex o-col--align-items-center")
+      h1(class="c-logo") Alejandro <br>Sotoca Pinilla
+    div(class="o-col o-col--flex o-col--align-items-center o-col--justify-content-end")
+      button(class="c-nav-button")
+        <svg class="c-nav-button__vector" xmlns="http://www.w3.org/2000/svg" width="19" height="15" viewBox="0 0 19 15">
+          <path class="c-nav-button__path c-nav-button__path--1" d="M2 2h15v1h-15z"/>
+          <path class="c-nav-button__path c-nav-button__path--2" d="M2 7h15v1h-15z"/>
+          <path class="c-nav-button__path c-nav-button__path--3" d="M2 12h10v1h-10z"/>
+          <path class="c-nav-button__path c-nav-button__path--4" d="M2 12h15v1h-15z"/>
+        </svg>

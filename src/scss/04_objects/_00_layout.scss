@@ -26,6 +26,10 @@ $o-layout__breakpoints: (
     }
   }
 
+  &--no-gutter {
+    padding: 0;
+  }
+
 }
 
 .o-row {
@@ -50,10 +54,14 @@ $o-layout__breakpoints: (
 }
 
 .o-col {
-  display: flex;
-  flex: 1 1 auto;
+  max-width: 100%;
   padding: 0 $o-layout__gutter;
   z-index: 1;
+
+  &--flex {
+    display: flex;
+    flex: 1 1 auto;
+  }
 
   &--align-self-stretch {
     align-self: stretch;
@@ -68,4 +76,27 @@ $o-layout__breakpoints: (
     align-items: stretch;
   }
 
+  &--justify-content-end {
+    justify-content: flex-end;
+  }
+
+  &--no-gutter {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  // column order
+  @for $i from 1 through $o-layout__columns {
+    &--order-#{$i} {
+      order: $i;
+    }
+  }
+
+}
+
+// column sizes
+@for $i from 1 through $o-layout__columns {
+  .o-col-#{$i} {
+    width: (100% / $o-layout__columns) * $i;
+  }
 }

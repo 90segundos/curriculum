@@ -1,0 +1,19 @@
+// Component
+// headings
+
+/*----------------[ variables ]----------------*/
+
+
+/*----------------[ style ]----------------*/
+
+.c-heading {
+  font-family: $s-font-body;
+  font-weight: 300;
+  @include font-size($s-font-size-sm);
+  text-transform: uppercase;
+  letter-spacing: $s-letter-spacing;
+  color: $s-color-light;
+  &:after {
+    content: " /";
+  }
+}

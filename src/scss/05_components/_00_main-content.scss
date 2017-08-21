@@ -1,0 +1,20 @@
+// Component
+// main-content
+
+/*----------------[ variables ]----------------*/
+
+
+/*----------------[ style ]----------------*/
+
+.c-main-content {
+  padding-top: $s-gutter;
+  padding-bottom: $s-gutter;
+}
+
+.c-section {
+  border-bottom: 1px solid $s-color-grey-90;
+  
+  &:last-child {
+    border-bottom-color: transparent;
+  }
+}

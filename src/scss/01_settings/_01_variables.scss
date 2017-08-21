@@ -72,6 +72,9 @@ $s-brand-colors: (
   'tertiary-dark' : $s-color-tertiary-dark
 );
 
+// spacing
+$s-gutter: 15px;
+
 // background
 $s-background-color: $s-color-light;
 $s-background-color--reversed: $s-color-dark;
@@ -81,5 +84,14 @@ $s-text-color: $s-color-light;
 $s-text-color--grey: $s-color-grey-60;
 
 // header
-
 $s-header-height: 80px;
+
+// text
+$s-letter-spacing: 4px;
+
+// transition
+$s-transition__timing-function: ease;
+$s-transition__duration: 300ms;
+$s-transition__delay: 0;
+$s-transition__property: all;
+$s-transition: $s-transition__property $s-transition__duration $s-transition__timing-function;

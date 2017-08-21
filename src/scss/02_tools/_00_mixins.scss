@@ -16,13 +16,23 @@
 
 }
 
+// padding
+@mixin scalePadding($times) {
+  padding-left: $s-gutter * $times;
+  padding-right: $s-gutter * $times;
+}
+
+// transition
+@mixin transition($property: $s-transition__property, $duration: $s-transition__duration,$timing-function: $s-transition__timing-function) {
+  transition: $property $duration $timing-function;
+}
+
 // Animation
 @mixin animation($param) {
     @each $key, $value in $param {
       #{animation-}#{$key}:#{$value};
     }
 }
-
 
 // Debug recursive outline
 @mixin outlineRecursive($element,$color,$degrees,$depth){

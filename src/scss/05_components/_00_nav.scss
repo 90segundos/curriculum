@@ -1,0 +1,71 @@
+// Component
+// nav button
+
+/*----------------[ variables ]----------------*/
+
+$c-nav-button__fill: $s-color-grey-60;
+$c-nav-button__fill--hover:  $s-color-light;
+
+/*----------------[ style ]----------------*/
+
+.c-nav-button {
+
+  // hover
+  &:hover {
+    & .c-nav-button__path {
+      fill: $c-nav-button__fill--hover;
+    }
+  }
+
+  // active
+  &.active {
+
+    & .c-nav-button__path {
+      fill: $c-nav-button__fill--hover;
+
+      // Layers
+      &--1 {
+        transform: rotate(45deg);
+      }
+
+      &--2 {
+        opacity: 0;
+      }
+
+      &--3 {
+        opacity: 0;
+      }
+
+      &--4 {
+        transform: rotate(-45deg);
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.c-nav-button__vector {
+
+}
+
+.c-nav-button__path {
+  @include transition();
+  fill: $c-nav-button__fill;
+  // layers
+  &--1 {
+    transform-origin: 2px 2px;
+  }
+
+  &--2 {
+
+  }
+
+  &--3 {
+
+  }
+
+  &--4 {
+    opacity: 0;
+    transform-origin: 2px 13px;
+  }
+}

@@ -9,8 +9,9 @@ $c-header__background-color: #282828;
 $c-header__color: #ffffff;
 
 // sub-header
-$c-sub-header__height: 100px;
+$c-sub-header__height: 110px;
 $c-sub-header__background-color: #242424;
+$c-sub-header__item-padding: $s-gutter;
 
 /*----------------[ style ]----------------*/
 
@@ -20,6 +21,8 @@ $c-sub-header__background-color: #242424;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
+  z-index: 10;
+
   // Responsive
   @each $key, $value in $o-layout__breakpoints {
     @media (min-width: map-get($s-breakpoints,$key)) {
@@ -29,9 +32,15 @@ $c-sub-header__background-color: #242424;
 }
 
 .c-header__container {
+  @include scalePadding(1);
   height: $c-header__height;
   background-color: $c-header__background-color;
   color: $c-header__color;
+
+  @media (min-width: $s-breakpoint--sm) {
+    @include scalePadding(1.5);
+  }
+
 }
 
 .c-logo {
@@ -53,29 +62,51 @@ $c-sub-header__background-color: #242424;
 }
 
 .c-sub-header__nav {
+  @include scalePadding(1);
   height: $c-sub-header__height;
   background-color: $c-sub-header__background-color;
+
+  @media (min-width: $s-breakpoint--sm) {
+    @include scalePadding(1.5);
+  }
+
 }
 
 .c-sub-header__item {
-  padding-bottom: 15px;
+  padding-bottom: $c-sub-header__item-padding;
   position: relative;
+
+  &.active {
+    &:after {
+      background-color: $s-color-light;
+    }
+  }
 
   &:after {
     content:"";
     height: 2px;
     width: 40px;
-    background-color: $s-color-grey-60;
+    background-color: $s-color-grey-90;
     position: absolute;
     bottom: 0;
     left: 0;
   }
 }
 
-.c-sub-header__link {
+.c-sub-header__number {
+  font-family: $s-font-heading;
+  display: block;
+  @include font-size($s-font-size-xs,$s-font-size-xs);
+  color: $s-color-grey-90;
+  padding-bottom: 5px;
+}
+
+.c-sub-header__link-text {
   font-family: 'Ubuntu', sans-serif;
   font-weight: 300;
+  display: block;
   @include font-size(15px, 20px);
+  height: 40px;
   text-transform: uppercase;
   letter-spacing: 4px;
   &:after {

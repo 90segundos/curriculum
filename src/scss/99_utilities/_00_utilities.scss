@@ -95,6 +95,11 @@ $u-debug : false;
   padding: 0;
 }
 
+.u-double-padding {
+  padding-left: $s-gutter*2;
+  padding-right: $s-gutter*2;
+}
+
 // Debug
 
 @if $u-debug {
