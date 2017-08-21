@@ -10,7 +10,7 @@ $c-header__color: #ffffff;
 
 // sub-header
 $c-sub-header__height: 110px;
-$c-sub-header__background-color: #242424;
+$c-sub-header__background-color: rgba($c-header__background-color, .5);
 $c-sub-header__item-padding: $s-gutter;
 
 /*----------------[ style ]----------------*/
@@ -44,7 +44,7 @@ $c-sub-header__item-padding: $s-gutter;
 }
 
 .c-logo {
-  font-family: 'Ubuntu', sans-serif;
+  font-family: $s-font-body;
   font-weight: 300;
   @include font-size(15px, 17px);
   text-transform: uppercase;
@@ -65,6 +65,7 @@ $c-sub-header__item-padding: $s-gutter;
   @include scalePadding(1);
   height: $c-sub-header__height;
   background-color: $c-sub-header__background-color;
+  background-image: url('../img/pattern-3.png');
 
   @media (min-width: $s-breakpoint--sm) {
     @include scalePadding(1.5);
@@ -72,17 +73,26 @@ $c-sub-header__item-padding: $s-gutter;
 
 }
 
+.c-sub-header__column {
+
+}
+
+
 .c-sub-header__item {
   padding-bottom: $c-sub-header__item-padding;
   position: relative;
 
-  &.active {
+  &:hover {
+    .c-sub-header__number {
+      color: $s-color-primary;
+    }
     &:after {
       background-color: $s-color-light;
     }
   }
 
   &:after {
+    @include transition(background-color, 200ms);
     content:"";
     height: 2px;
     width: 40px;
@@ -94,6 +104,7 @@ $c-sub-header__item-padding: $s-gutter;
 }
 
 .c-sub-header__number {
+  @include transition(color, 200ms);
   font-family: $s-font-heading;
   display: block;
   @include font-size($s-font-size-xs,$s-font-size-xs);
@@ -102,7 +113,7 @@ $c-sub-header__item-padding: $s-gutter;
 }
 
 .c-sub-header__link-text {
-  font-family: 'Ubuntu', sans-serif;
+  font-family: $s-font-body;
   font-weight: 300;
   display: block;
   @include font-size(15px, 20px);

@@ -9,7 +9,8 @@ $c-nav-button__fill--hover:  $s-color-light;
 /*----------------[ style ]----------------*/
 
 .c-nav-button {
-
+  display: block;
+  padding-top: 4px;
   // hover
   &:hover {
     & .c-nav-button__path {
@@ -19,7 +20,6 @@ $c-nav-button__fill--hover:  $s-color-light;
 
   // active
   &.active {
-
     & .c-nav-button__path {
       fill: $c-nav-button__fill--hover;
 
@@ -33,12 +33,7 @@ $c-nav-button__fill--hover:  $s-color-light;
       }
 
       &--3 {
-        opacity: 0;
-      }
-
-      &--4 {
         transform: rotate(-45deg);
-        opacity: 1;
       }
     }
   }
@@ -61,11 +56,6 @@ $c-nav-button__fill--hover:  $s-color-light;
   }
 
   &--3 {
-
-  }
-
-  &--4 {
-    opacity: 0;
     transform-origin: 2px 13px;
   }
 }

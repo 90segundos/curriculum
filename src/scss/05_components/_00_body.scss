@@ -3,12 +3,15 @@
 
 /*----------------[ variables ]----------------*/
 
-$c-header__background-color: #202020;
+$c-body__background-color: #1a1a1a;
 
 /*----------------[ style ]----------------*/
 
 .c-body {
   padding-top: $s-header-height;
-  background-color: $c-header__background-color;
+  background-color: $c-body__background-color;
+  //background-image: url('../img/cessna-negative.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
   color: $s-text-color;
 }

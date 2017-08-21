@@ -48,7 +48,7 @@ $s-color-greyscale: (
   '90': $s-color-grey-90
 );
 
-$s-color-primary: #009982;
+$s-color-primary: #b68845;
 $s-color-primary-light: lighten($s-color-primary, 10%);
 $s-color-primary-dark: desaturate(darken($s-color-primary,10%), 10);
 
