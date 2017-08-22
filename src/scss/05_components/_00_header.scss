@@ -10,7 +10,7 @@ $c-header__color: #ffffff;
 
 // sub-header
 $c-sub-header__height: 110px;
-$c-sub-header__background-color: rgba($c-header__background-color, .5);
+$c-sub-header__background-color: #222222;
 $c-sub-header__item-padding: $s-gutter;
 
 /*----------------[ style ]----------------*/
@@ -65,7 +65,6 @@ $c-sub-header__item-padding: $s-gutter;
   @include scalePadding(1);
   height: $c-sub-header__height;
   background-color: $c-sub-header__background-color;
-  background-image: url('../img/pattern-3.png');
 
   @media (min-width: $s-breakpoint--sm) {
     @include scalePadding(1.5);
@@ -116,8 +115,8 @@ $c-sub-header__item-padding: $s-gutter;
   font-family: $s-font-body;
   font-weight: 300;
   display: block;
-  @include font-size(15px, 20px);
-  height: 40px;
+  @include font-size(13px,16px);
+  height: 32px;
   text-transform: uppercase;
   letter-spacing: 4px;
   &:after {

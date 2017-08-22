@@ -1,0 +1,15 @@
+// theme
+// light
+
+/* ---------------- [ variables ] ---------------- */
+
+$light-body__background-color: #ffffff;
+
+/* ---------------- [ style ] ---------------- */
+
+.light {
+  &.c-body {
+    background-color: $light-body__background-color;
+    color: $s-color-dark;
+  }
+}

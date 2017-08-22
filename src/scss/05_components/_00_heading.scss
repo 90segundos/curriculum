@@ -3,17 +3,51 @@
 
 /*----------------[ variables ]----------------*/
 
+$c-heading__font-size--1: $s-font-size-md;
+$c-heading__font-size--2: $s-font-size-sm;
+$c-heading__font-size--3: $s-font-size-xs;
+
+
 
 /*----------------[ style ]----------------*/
 
 .c-heading {
-  font-family: $s-font-body;
-  font-weight: 300;
-  @include font-size($s-font-size-md);
+  font-family: $s-font-heading;
+  @include font-size($c-heading__font-size--1);
   text-transform: uppercase;
-  letter-spacing: $s-letter-spacing;
+  letter-spacing: 2px;
   color: $s-color-light;
-  &:after {
-    content: " /";
+
+  &--1 {
+    @include font-size($c-heading__font-size--1);
+
+    &:after {
+      content: "";
+      display: block;
+      height: 2px;
+      width: 80px;
+      background-color: $s-color-grey-70;
+      margin-top: 15px;
+    }
   }
+
+  &--2 {
+    @include font-size($c-heading__font-size--1);
+    font-family: $s-font-body;
+    font-weight: 300;
+    text-transform: initial;
+    letter-spacing: 1px;
+    &:after {
+      content: " /";
+    }
+  }
+
+  &--3 {
+    @include font-size($c-heading__font-size--2);
+    font-family: $s-font-body;
+    font-weight: 300;
+    text-transform: initial;
+    letter-spacing: 1px;
+  }
+
 }

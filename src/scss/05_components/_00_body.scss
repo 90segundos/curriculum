@@ -10,8 +10,8 @@ $c-body__background-color: #1a1a1a;
 .c-body {
   padding-top: $s-header-height;
   background-color: $c-body__background-color;
-  //background-image: url('../img/cessna-negative.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-image: url('../img/pattern-4.png');
   color: $s-text-color;
+  @include backgroundCover('../img/landscape.jpg',$c-body__background-color);
+
 }

@@ -34,6 +34,17 @@
     }
 }
 
+// Background
+@mixin backgroundCover($url,$color){
+  background-image: url($url);
+  background-position: center center;
+  background-size: cover;
+  background-repeat: none;
+  @if($color) {
+    background-color: $color;
+  }
+}
+
 // Debug recursive outline
 @mixin outlineRecursive($element,$color,$degrees,$depth){
   @if $depth > 1 {
