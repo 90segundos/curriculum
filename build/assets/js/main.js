@@ -35,6 +35,10 @@ function toggleActive(element){
   }
 }
 
+function activateOnReady(){
+  $('[data-activate=ready]').addClass('active');
+}
+
 function buttonNavInit(){
   var blocked = false;
   $('.c-nav-button').on('click',function(event){
@@ -73,7 +77,7 @@ function graph_1(){
   ]
 
 
-  var canvas = document.getElementById("myCanvas");
+  var canvas = document.getElementById("canvas-1");
 
   var grey_path = [];
   var i = 0;
@@ -109,6 +113,7 @@ function graph_1(){
 /* ---------------- [ init ] ---------------- */
 
 $(document).ready(function(){
+  activateOnReady();
   buttonNavInit();
   graph_1();
 });

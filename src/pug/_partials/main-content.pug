@@ -8,5 +8,46 @@ div(class="o-container o-container--no-gutter c-main-content")
       p.
         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
     
+    div(class="o-col o-col-6 o-col--flex o-col--justify-content-center")
+      <canvas id="canvas-1" class="c-graphic-1" width="250" height="250"></canvas>
+  
+  // .o-section    
+  
+  section(class="o-section c-section o-row")
     div(class="o-col o-col-6")
-      <canvas id="myCanvas" width="250" height="250"></canvas>
+      
+      //- c-bar-graph
+      div(class="c-bar-graph")
+        ul(class="c-bar-graph__list")
+            
+          li(class="c-bar-graph__item")
+            div(class="c-bar-graph__inner-bar c-bar-graph__inner-bar--70" data-activate="ready")
+              span(class="c-bar-graph__bar-title") html5
+            span(class="c-bar-graph__bar-value") 70%
+            
+          li(class="c-bar-graph__item")
+            div(class="c-bar-graph__inner-bar c-bar-graph__inner-bar--75" data-activate="ready")
+              span(class="c-bar-graph__bar-title") css
+            span(class="c-bar-graph__bar-value") 75%
+            
+          li(class="c-bar-graph__item")
+            div(class="c-bar-graph__inner-bar c-bar-graph__inner-bar--60" data-activate="ready")
+              span(class="c-bar-graph__bar-title") JavaScript
+            span(class="c-bar-graph__bar-value") 60%
+              
+          li(class="c-bar-graph__item")
+            div(class="c-bar-graph__inner-bar c-bar-graph__inner-bar--70" data-activate="ready")
+              span(class="c-bar-graph__bar-title") jQuery*
+            span(class="c-bar-graph__bar-value") 70%
+            
+          li(class="c-bar-graph__item")
+            div(class="c-bar-graph__inner-bar c-bar-graph__inner-bar--75" data-activate="ready")
+              span(class="c-bar-graph__bar-title") php
+            span(class="c-bar-graph__bar-value") 75%
+            
+          li(class="c-bar-graph__item")
+            div(class="c-bar-graph__inner-bar c-bar-graph__inner-bar--60" data-activate="ready")
+              span(class="c-bar-graph__bar-title") mySQL
+            span(class="c-bar-graph__bar-value") 60%
+            
+      //- /.c-bar-graph

@@ -80,6 +80,10 @@ $o-layout__breakpoints: (
     justify-content: flex-end;
   }
 
+  &--justify-content-center {
+    justify-content: center;
+  }
+
   &--no-gutter {
     padding-left: 0;
     padding-right: 0;
