@@ -4,10 +4,10 @@ div(class="o-container c-main-content o-container--no-gutter")
     div(class="o-col o-col-12")
       div(class="o-row")
       
-        div(class="o-col o-col-12")
+        div(class="o-col o-col-8")
           h1(class="c-heading c-heading--1") Experiencia y formación
           p.
-            LInicié mi formación en el desarrollo front - end en Madrid 2012 en <a href="http://www.aulacreactiva.com/" title="Aula creactiva" target="_blank">Aula Creactiva</a>, estudiando diseño web tras mis estudios de diseño gráfico. Desde entonces no he dejado de trabajar en múltiples proyectos, primero como diseñador web freelance y más tarde también en diversos estudios de diseño como <a href="http://tasman.es/" title="Tasman Graphics" target="_blank">Tasman Graphic</a> y <a href="https://droolstudio.com/" title="Drool Studio" target="_blank">Drool Studio</a>.
+            Inicié mi formación en el desarrollo front - end en Madrid 2012 en <a href="http://www.aulacreactiva.com/" title="Aula creactiva" target="_blank">Aula Creactiva</a>, estudiando diseño web tras mis estudios de diseño gráfico. Desde entonces no he dejado de trabajar en múltiples proyectos, primero como diseñador web freelance y más tarde también en diversos estudios de diseño como <a href="http://tasman.es/" title="Tasman Graphics" target="_blank">Tasman Graphic</a> y <a href="https://droolstudio.com/" title="Drool Studio" target="_blank">Drool Studio</a>.
         //- /.o-col
       
       //- /.o-row
@@ -56,23 +56,32 @@ div(class="o-container c-main-content o-container--no-gutter")
               +circle(1,60)
             
             //- values
-            div(class="c-loop__container--values" data-activate="ready")
+            div(class="c-loop__container--values" data-activate="ready")  
             
-              //-
-                - var i = 0;
-                while i < 100
-                  +circle-value(i)
-                  - var i = i+10;
-                  
               +circle-value(0)        
               +circle-value(60) 
               +circle-value(70)    
               +circle-value(75)    
 
+              //-
+                - var i = 0;
+                while i < 100
+                  +circle-value(i)
+                  - var i = i+10;
+                                
         //- /.o-col
+        
+        div(class="o-col o-col-12")
+          p
+            em.
+              * Aunque jQuery es una librería JavaScript, se incluye en este diagrama por su relevancia para la programación de la funcionalidad de la web.
+        
       //- /.o-row
     //- /.o-col
-  //- .o-section .o-row 
-
+  //- .o-section .o-row
+  
+  section(class="o-section c-section o-row")
+    div(class="o-col o-col-12")
+      div(class="o-row")
 
   

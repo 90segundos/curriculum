@@ -81,7 +81,8 @@ $c-sub-header__item-padding: $s-gutter;
   padding-bottom: $c-sub-header__item-padding;
   position: relative;
 
-  &:hover {
+  &:hover,
+  &.active {
     .c-sub-header__number {
       color: $s-color-primary;
     }

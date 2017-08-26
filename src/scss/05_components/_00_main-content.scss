@@ -12,9 +12,17 @@
 }
 
 .c-section {
-  border-bottom: 1px solid $s-color-grey-90;
 
+  &:after {
+    display: block;
+    width: 100%;
+    content: '';
+    margin: 0 $s-gutter;
+    border-bottom: 1px solid $s-color-grey-90;
+  }
   &:last-child {
-    border-bottom-color: transparent;
+    &:after {
+      border-bottom-color: transparent;
+    }
   }
 }

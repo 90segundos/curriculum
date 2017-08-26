@@ -12,10 +12,11 @@ $c-heading__font-size--3: $s-font-size-xs;
 /*----------------[ style ]----------------*/
 
 .c-heading {
-  font-family: $s-font-heading;
+  font-family: $s-font-body;
   @include font-size($c-heading__font-size--1);
+  font-weight: 300;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 4px;
   color: $s-color-grey-20;
 
   &--1 {
