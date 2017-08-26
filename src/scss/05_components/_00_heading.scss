@@ -16,7 +16,7 @@ $c-heading__font-size--3: $s-font-size-xs;
   @include font-size($c-heading__font-size--1);
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: $s-color-light;
+  color: $s-color-grey-20;
 
   &--1 {
     @include font-size($c-heading__font-size--1);

@@ -85,6 +85,9 @@ $c-sub-header__item-padding: $s-gutter;
     .c-sub-header__number {
       color: $s-color-primary;
     }
+    .c-sub-header__link-text {
+      color: $s-color-light;
+    }
     &:after {
       background-color: $s-color-light;
     }
@@ -119,6 +122,8 @@ $c-sub-header__item-padding: $s-gutter;
   height: 32px;
   text-transform: uppercase;
   letter-spacing: 4px;
+  color: $s-color-grey-60;
+  transition: color 250ms ease;
   &:after {
     content: " /";
   }

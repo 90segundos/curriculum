@@ -7,22 +7,34 @@ $c-bar-graph__item-background-color: #282828;
 $c-bar-graph__inner-bar-background-color: #303030;
 $c-bar-graph__inner-bar-background: linear-gradient(to right,  rgba(0,0,0,0) 60%,rgba(48,48,48,1) 100%);
 $c-bar-graph__inner-bar-border-color: $s-color-primary;
+$c-bar-graph__inner-bar-border-width: 4px;
 
 // loop
 $c-loop__size: 300px;
 $c-loop__items: 6;
 $c-loop__circle-min-size: 10%;
 $c-loop__circle-max-size: 75%;
+$c-loop__main-color: #21d690;
+$c-loop__line-width: $c-bar-graph__inner-bar-border-width;
+/*
+  $c-loop__item-colors: (
+    #F16529,
+    #33A9DC,
+    #F7DF1E,
+    #db5555,
+    #2aad52,
+    #e846bb
+  );
+*/
+
 $c-loop__item-colors: (
-  #F16529,
-  #33A9DC,
-  #F7DF1E,
-  #db5555,
-  #2aad52,
-  #e846bb
+  $c-loop__main-color,
+  desaturate(darken($c-loop__main-color, 5),2),
+  desaturate(darken($c-loop__main-color, 10),4),
+  desaturate(darken($c-loop__main-color, 15),6),
+  desaturate(darken($c-loop__main-color, 20),8),
+  desaturate(darken($c-loop__main-color, 25),10)
 );
-
-
 /* ---------------- [ style ] ---------------- */
 
 // c-graphic-1
@@ -59,6 +71,7 @@ $c-loop__item-colors: (
       @while $i <= 6 {
         &:nth-child(#{$i}) .c-bar-graph__inner-bar {
           transition-delay: 100ms * $i;
+          background-color: $c-bar-graph__inner-bar-background-color;
           border-color: nth($c-loop__item-colors, $i);
         }
         $i : ($i + 1);
@@ -71,7 +84,7 @@ $c-loop__item-colors: (
         top: 0;
         left: 0;
         background: $c-bar-graph__inner-bar-background-color;
-        border-right: 3px solid;
+        border-right: $c-bar-graph__inner-bar-border-width solid;
         padding: 5px 10px;
         text-align: left;
         transition: opacity 500ms ease, width 500ms ease;
@@ -95,12 +108,12 @@ $c-loop__item-colors: (
 
       .c-bar-graph__bar-title {
         letter-spacing: 1px;
-        color: $s-color-light;
+        color: $s-color-grey-40;
       }
 
     .c-bar-graph__bar-value {
       letter-spacing: 1px;
-        color: $s-color-light;
+        color: $s-color-grey-50;
     }
 
 // c-loop
@@ -268,7 +281,7 @@ $c-loop__item-colors: (
   top: 2.5%;
   width: 190%;
   height: 95%;
-  border: solid 3px;
+  border: solid $c-loop__line-width;
 }
 
 

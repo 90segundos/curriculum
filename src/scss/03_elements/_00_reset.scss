@@ -32,6 +32,12 @@ h6 {
   }
 }
 
+a {
+  text-decoration: none;
+  letter-spacing: inherit;
+  color: inherit;
+}
+
 p {
   color: $s-text-color--grey;
   letter-spacing: .5px;
@@ -39,21 +45,13 @@ p {
   &:last-child {
     margin-bottom: 0;
   }
-}
 
-a {
-  text-decoration: none;
-  letter-spacing: inherit;
-  color: inherit;
-  &:visited,
-  &:link,
-  &:active,
-  &:focus,
-  &:hover
-  {
-    color: inherit;
-    text-decoration: none;
-    outline: none;
+  a {
+    @include transition(color);
+    color: $s-color-grey-30;
+    &:hover {
+      color: $s-color-light;
+    }
   }
 }
 
