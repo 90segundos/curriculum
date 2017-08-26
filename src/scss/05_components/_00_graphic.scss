@@ -271,33 +271,17 @@ $c-loop__circle-max-size: 75%;
     background-color: rgba($s-color-grey-70,.2);
   }
 
-  &--1 {
-    transform: translateX(-50%);
+  $increase: 5;
+  @for $i from 0 to 100 {
+    $angle: $i * 360deg / 100;
+    &--#{$i} {
+      transform: translateX(-50%) rotate($angle);
 
-  }
-
-  &--2 {
-    transform: translateX(-50%) rotate(216deg);
-
-    .c-loop__value-container {
-      transform: rotate(-216deg);
+      .c-loop__value-container {
+        transform: rotate(-$angle);
+      }
     }
-  }
-
-  &--3 {
-    transform: translateX(-50%) rotate(252deg);
-
-    .c-loop__value-container {
-      transform: rotate(-252deg);
-    }
-  }
-
-  &--4 {
-    transform: translateX(-50%) rotate(270deg);
-
-    .c-loop__value-container {
-      transform: rotate(-270deg);
-    }
+    $i: $i + $increase;
   }
 }
 

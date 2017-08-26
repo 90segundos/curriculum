@@ -9,3 +9,7 @@ mixin circle(order,percent)
     div(class="c-loop__mask c-loop__mask--2")
       div(class="c-loop__line")
       div(class="c-loop__overlay")
+        
+mixin circle-value(value)
+  span(class="c-loop__value c-loop__value--"+value) 
+    span(class="c-loop__value-container")= value 

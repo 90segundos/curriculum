@@ -17,7 +17,6 @@ div(class="o-container c-main-content")
         //- upper
         div(class="c-loop__container--upper")        
           
-          //- circle 1
           +circle(6,60)
           +circle(5,70)
           +circle(4,65)
@@ -27,14 +26,10 @@ div(class="o-container c-main-content")
         
         //- values
         div(class="c-loop__container--values" data-activate="ready")
-          span(class="c-loop__value c-loop__value--1") 
-            span(class="c-loop__value-container") 0% 
-          span(class="c-loop__value c-loop__value--2") 
-            span(class="c-loop__value-container") 60% 
-          span(class="c-loop__value c-loop__value--3") 
-            span(class="c-loop__value-container") 70% 
-          span(class="c-loop__value c-loop__value--4") 
-            span(class="c-loop__value-container") 75% 
+          - var i = 0;
+          while i < 100
+            +circle-value(i)
+            - var i = i+10;
             
   //- /.o-section
   
