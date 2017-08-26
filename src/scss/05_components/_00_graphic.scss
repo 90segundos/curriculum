@@ -13,6 +13,14 @@ $c-loop__size: 300px;
 $c-loop__items: 6;
 $c-loop__circle-min-size: 10%;
 $c-loop__circle-max-size: 75%;
+$c-loop__item-colors: (
+  #F16529,
+  #33A9DC,
+  #F7DF1E,
+  #db5555,
+  #2aad52,
+  #e846bb
+);
 
 
 /* ---------------- [ style ] ---------------- */
@@ -27,6 +35,7 @@ $c-loop__circle-max-size: 75%;
 
 .c-bar-graph {
   position: relative;
+  width: 100%;
 }
 
   .c-bar-graph__list {
@@ -45,13 +54,14 @@ $c-loop__circle-max-size: 75%;
       }
 
       // stepped transition delay
-      $i: 0;
+      $i: 1;
       $increase: 100; // milliseconds
-      @while $i < 10 {
+      @while $i <= 6 {
         &:nth-child(#{$i}) .c-bar-graph__inner-bar {
           transition-delay: 100ms * $i;
-          $i : ($i + 1);
+          border-color: nth($c-loop__item-colors, $i);
         }
+        $i : ($i + 1);
       }
 
     }
@@ -61,7 +71,7 @@ $c-loop__circle-max-size: 75%;
         top: 0;
         left: 0;
         background: $c-bar-graph__inner-bar-background-color;
-        border-right: 2px solid $c-bar-graph__inner-bar-border-color;
+        border-right: 3px solid;
         padding: 5px 10px;
         text-align: left;
         transition: opacity 500ms ease, width 500ms ease;
@@ -195,6 +205,16 @@ $c-loop__circle-max-size: 75%;
     }
     $i : $i + 5;
   }
+
+  // line color
+  @for $i from 1 through $c-loop__items {
+    &:nth-child(#{$i}){
+      .c-loop__line {
+        border-color: nth($c-loop__item-colors,$i);
+      }
+    }
+    $i : $i + 1;
+  }
 }
 
 // mask: container of each half of the animated circle
@@ -248,7 +268,7 @@ $c-loop__circle-max-size: 75%;
   top: 2.5%;
   width: 190%;
   height: 95%;
-  border: solid 2px $s-color-primary;
+  border: solid 3px;
 }
 
 

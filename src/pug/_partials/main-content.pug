@@ -1,8 +1,25 @@
 div(class="o-container c-main-content")
   
   //- /.o-row o-section
-  section(class="o-section c-section o-row")
-    div(class="o-col o-col-6 o-col--flex")
+  section(class="o-section c-section o-row o-row--align-items-stretch")
+    
+    div(class="o-col o-col-6 o-col--flex o-col--align-items-center")
+      
+      //- c-bar-graph
+      div(class="c-bar-graph")
+        ul(class="c-bar-graph__list")
+            
+          +percentBar('html5',70)
+          +percentBar('css',75)
+          +percentBar('JavaScript',60)
+          +percentBar('jQuery*',70)
+          +percentBar('php',75)
+          +percentBar('mySQL',60)
+            
+      //- /.c-bar-graph
+    //- /.o-col
+    
+    div(class="o-col o-col-6 o-col--flex o-col--justify-content-center")
       div(class="c-loop")
 
         //- lower
@@ -27,7 +44,7 @@ div(class="o-container c-main-content")
         //- values
         div(class="c-loop__container--values" data-activate="ready")
         
-          //
+          //-
             - var i = 0;
             while i < 100
               +circle-value(i)
@@ -40,7 +57,8 @@ div(class="o-container c-main-content")
           +circle-value(80)    
           +circle-value(60)    
           +circle-value(75)    
-          
+
+    //- /.o-col
   //- /.o-section
   
   section(class="o-section c-section o-row")
@@ -59,50 +77,5 @@ div(class="o-container c-main-content")
       
   
   // .o-section    
-  
-  section(class="o-section c-section o-row")
-    div(class="o-col o-col-6")
-      
-      //- c-bar-graph
-      div(class="c-bar-graph")
-        ul(class="c-bar-graph__list")
-            
-          li(class="c-bar-graph__item")
-            div(class="c-bar-graph__inner-bar c-bar-graph__inner-bar--70" data-activate="ready")
-              span(class="c-bar-graph__bar-title") html5
-            span(class="c-bar-graph__bar-value") 70%
-            
-          li(class="c-bar-graph__item")
-            div(class="c-bar-graph__inner-bar c-bar-graph__inner-bar--75" data-activate="ready")
-              span(class="c-bar-graph__bar-title") css
-            span(class="c-bar-graph__bar-value") 75%
-            
-          li(class="c-bar-graph__item")
-            div(class="c-bar-graph__inner-bar c-bar-graph__inner-bar--60" data-activate="ready")
-              span(class="c-bar-graph__bar-title") JavaScript
-            span(class="c-bar-graph__bar-value") 60%
-              
-          li(class="c-bar-graph__item")
-            div(class="c-bar-graph__inner-bar c-bar-graph__inner-bar--70" data-activate="ready")
-              span(class="c-bar-graph__bar-title") jQuery*
-            span(class="c-bar-graph__bar-value") 70%
-            
-          li(class="c-bar-graph__item")
-            div(class="c-bar-graph__inner-bar c-bar-graph__inner-bar--75" data-activate="ready")
-              span(class="c-bar-graph__bar-title") php
-            span(class="c-bar-graph__bar-value") 75%
-            
-          li(class="c-bar-graph__item")
-            div(class="c-bar-graph__inner-bar c-bar-graph__inner-bar--60" data-activate="ready")
-              span(class="c-bar-graph__bar-title") mySQL
-            span(class="c-bar-graph__bar-value") 60%
-            
-      //- /.c-bar-graph
-    //- /.o-col
-    
-    div(class="o-col o-col-6 o-col--flex o-col--justify-content-center")
-      <canvas id="canvas-1" class="c-graphic-1" width="250" height="250"></canvas>
-      
-    //- /.o-col
 
   
