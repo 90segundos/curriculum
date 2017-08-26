@@ -2,72 +2,77 @@ div(class="o-container c-main-content o-container--no-gutter")
   
   section(class="o-section c-section o-row")
     div(class="o-col o-col-12")
-      h1(class="c-heading c-heading--1") Experiencia y formación
-      p.
-        LInicié mi formación en el desarrollo front - end en Madrid 2012 en <a href="http://www.aulacreactiva.com/" title="Aula creactiva" target="_blank">Aula Creactiva</a>, estudiando diseño web tras mis estudios de diseño gráfico. Desde entonces no he dejado de trabajar en múltiples proyectos, primero como diseñador web freelance y más tarde también en diversos estudios de diseño como <a href="http://tasman.es/" title="Tasman Graphics" target="_blank">Tasman Graphic</a> y <a href="https://droolstudio.com/" title="Drool Studio" target="_blank">Drool Studio</a>.
+      div(class="o-row")
       
-  
-  //- .o-section  
-  
-  section(class="o-section c-section o-row o-row--align-items-stretch")
-    div(class="o-col o-col-12")
-      h2(class="c-heading c-heading--2") Lenguajes para desarrollo front-end
-    div(class="o-col o-col-6 o-col--flex o-col--align-items-center")
+        div(class="o-col o-col-12")
+          h1(class="c-heading c-heading--1") Experiencia y formación
+          p.
+            LInicié mi formación en el desarrollo front - end en Madrid 2012 en <a href="http://www.aulacreactiva.com/" title="Aula creactiva" target="_blank">Aula Creactiva</a>, estudiando diseño web tras mis estudios de diseño gráfico. Desde entonces no he dejado de trabajar en múltiples proyectos, primero como diseñador web freelance y más tarde también en diversos estudios de diseño como <a href="http://tasman.es/" title="Tasman Graphics" target="_blank">Tasman Graphic</a> y <a href="https://droolstudio.com/" title="Drool Studio" target="_blank">Drool Studio</a>.
+        //- /.o-col
       
-      //- c-bar-graph
-      div(class="c-bar-graph")
-        ul(class="c-bar-graph__list")
-            
-          +percentBar('html5',70)
-          +percentBar('css',75)
-          +percentBar('JavaScript',60)
-          +percentBar('jQuery*',70)
-          +percentBar('php',75)
-          +percentBar('mySQL',60)
-            
-      //- /.c-bar-graph
-    //- /.o-col
-    
-    div(class="o-col o-col-6 o-col--flex o-col--justify-content-end")
-      div(class="c-loop")
-
-        //- lower
-        div(class="c-loop__container--lower")
-          div(class="c-loop__circle c-loop__circle--1")
-          div(class="c-loop__circle c-loop__circle--2")
-          div(class="c-loop__circle c-loop__circle--3")
-          div(class="c-loop__circle c-loop__circle--4")  
-          div(class="c-loop__circle c-loop__circle--5")
-          div(class="c-loop__circle c-loop__circle--6")
+      //- /.o-row
+      
+      div(class="o-row o-row--align-items-stretch")
         
-        //- upper
-        div(class="c-loop__container--upper")        
+        div(class="o-col o-col-12")
+          h2(class="c-heading c-heading--2") Lenguajes para desarrollo front-end
+  
+        div(class="o-col o-col-6 o-col--flex o-col--align-items-center")
           
-          +circle(6,60)
-          +circle(5,70)
-          +circle(4,65)
-          +circle(3,80)
-          +circle(2,75)
-          +circle(1,20)
+          //- c-bar-graph
+          div(class="c-bar-graph")
+            ul(class="c-bar-graph__list")
+                
+              +percentBar('html5',70)
+              +percentBar('css',75)
+              +percentBar('JavaScript',60)
+              +percentBar('jQuery*',70)
+              +percentBar('php',75)
+              +percentBar('mySQL',60)
+                
+          //- /.c-bar-graph
+        //- /.o-col
         
-        //- values
-        div(class="c-loop__container--values" data-activate="ready")
-        
-          //-
-            - var i = 0;
-            while i < 100
-              +circle-value(i)
-              - var i = i+10;
-              
-          +circle-value(0)        
-          +circle-value(20) 
-          +circle-value(70)    
-          +circle-value(65)    
-          +circle-value(80)    
-          +circle-value(60)    
-          +circle-value(75)    
+        div(class="o-col o-col-6 o-col--flex o-col--justify-content-end")
+          div(class="c-loop")
 
+            //- lower
+            div(class="c-loop__container--lower")
+              div(class="c-loop__circle c-loop__circle--1")
+              div(class="c-loop__circle c-loop__circle--2")
+              div(class="c-loop__circle c-loop__circle--3")
+              div(class="c-loop__circle c-loop__circle--4")  
+              div(class="c-loop__circle c-loop__circle--5")
+              div(class="c-loop__circle c-loop__circle--6")
+            
+            //- upper
+            div(class="c-loop__container--upper")        
+              
+              +circle(6,70)
+              +circle(5,75)
+              +circle(4,60)
+              +circle(3,70)
+              +circle(2,75)
+              +circle(1,60)
+            
+            //- values
+            div(class="c-loop__container--values" data-activate="ready")
+            
+              //-
+                - var i = 0;
+                while i < 100
+                  +circle-value(i)
+                  - var i = i+10;
+                  
+              +circle-value(0)        
+              +circle-value(60) 
+              +circle-value(70)    
+              +circle-value(75)    
+
+        //- /.o-col
+      //- /.o-row
     //- /.o-col
-  //- /.o-section  
+  //- .o-section .o-row 
+
 
   

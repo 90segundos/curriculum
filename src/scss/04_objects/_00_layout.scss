@@ -35,9 +35,14 @@ $o-layout__breakpoints: (
 .o-row {
   margin-left: -$o-layout__gutter;
   margin-right: -$o-layout__gutter;
+  padding-bottom: $o-layout__gutter;
   display: flex;
   flex: 1 0 auto;
   flex-wrap: wrap;
+
+  &:last-child {
+    padding-bottom: 0;
+  }
 
   &--align-self-stretch {
     align-self: stretch;
