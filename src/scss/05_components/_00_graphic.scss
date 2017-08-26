@@ -170,8 +170,8 @@ $c-loop__circle-max-size: 75%;
     @if $i <= 50 {
       &--percent-#{$i}.active {
         .c-loop__mask--2 .c-loop__overlay {
-          transition: transform .1s ease-out;
-          transform: rotate( $i * 360 / 100deg );
+          transition: transform 1s ease-out;
+          transform: rotate( $i * 360deg / 100 );
         }
       }
     }
