@@ -131,7 +131,7 @@ $c-loop__circle-max-size: 75%;
 
     .c-loop__value {
       opacity: 0;
-      transition: opacity 100ms ease;
+      transition: opacity 200ms ease;
       transition-delay: 1s;
     }
 
@@ -188,7 +188,6 @@ $c-loop__circle-max-size: 75%;
         }
       }
     }
-
     $i : $i + 5;
   }
 }
@@ -267,8 +266,9 @@ $c-loop__circle-max-size: 75%;
     top: 20%;
     left: 50%;
     height: 60%;
+    width: 2px;
     transform: translateX(-50%);
-    border-left: solid 1px rgba($s-color-grey-70,.5);
+    background-color: rgba($s-color-grey-70,.2);
   }
 
   &--1 {
