@@ -147,24 +147,29 @@ $c-loop__circle-max-size: 75%;
     $i : $i + 1;
   }
 
-  // Activation
-  &.active {
-
-    // left mask
-    .c-loop__mask--1 {
-      .c-loop__overlay {
-        transition-delay: .5s;
-        transform: rotate(90deg);
+  // percentage
+  $i:0;
+  @while $i <= 100 {
+    @if $i <= 50 {
+      &--#{$i}-percent.active {
+        .c-loop__mask--2 .c-loop__overlay {
+          transform: rotate( $i * 360 / 100deg );
+        }
+      }
+    }
+    @else {
+      &--#{$i}-percent.active {
+        .c-loop__mask--2 .c-loop__overlay {
+          transform: rotate( 180deg );
+        }
+        .c-loop__mask--1 .c-loop__overlay {
+          transition-delay: .5s;
+          transform: rotate( ($i - 50) * 360deg / 100 );
+        }
       }
     }
 
-    // right mask
-    .c-loop__mask--2 {
-      .c-loop__overlay {
-        transform: rotate(180deg);
-      }
-    }
-
+    $i : $i + 5;
   }
 }
 
