@@ -138,6 +138,11 @@ $c-loop__circle-max-size: 75%;
     &.active {
       .c-loop__value {
         opacity: 1;
+        &:after {
+          transition: height 500ms ease-out;
+          transition-delay: 1s;
+          height: 60%;
+        }
       }
     }
   }
@@ -265,7 +270,7 @@ $c-loop__circle-max-size: 75%;
     position: absolute;
     top: 20%;
     left: 50%;
-    height: 60%;
+    height: 0;
     width: 2px;
     transform: translateX(-50%);
     background-color: rgba($s-color-grey-70,.2);

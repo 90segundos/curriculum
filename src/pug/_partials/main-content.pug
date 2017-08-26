@@ -26,11 +26,21 @@ div(class="o-container c-main-content")
         
         //- values
         div(class="c-loop__container--values" data-activate="ready")
-          - var i = 0;
-          while i < 100
-            +circle-value(i)
-            - var i = i+10;
-            
+        
+          //
+            - var i = 0;
+            while i < 100
+              +circle-value(i)
+              - var i = i+10;
+              
+          +circle-value(0)        
+          +circle-value(20) 
+          +circle-value(70)    
+          +circle-value(65)    
+          +circle-value(80)    
+          +circle-value(60)    
+          +circle-value(75)    
+          
   //- /.o-section
   
   section(class="o-section c-section o-row")
