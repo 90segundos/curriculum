@@ -111,6 +111,7 @@ $c-loop__circle-max-size: 75%;
 
   // lower
   &--lower {
+    display: none;
     .c-loop__circle {
       z-index: 1;
       border: dashed round($c-loop__size/200) $s-color-grey-90;
@@ -170,37 +171,39 @@ $c-loop__circle-max-size: 75%;
 // mask: container of each half of the animated circle
 .c-loop__mask {
   position: absolute;
-  top: -5%;
-  height: 110%;
-  width: 55%;
+  top: 0;
+  height: 100%;
+  width: 50%;
   overflow: hidden;
   z-index: 1;
 
   // left mask - right mask
   &--1 {
-    left: -5%;
+    left: 0;
 
     // inner circle
     .c-loop__line {
-      left: 10%;
+      left: 5%;
     }
 
     // overlay
     .c-loop__overlay {
+      transition-timing-function: ease-out;
       transform-origin: center right;
     }
   }
 
   &--2 {
-    right: -5%;
+    right: 0;
 
     // inner circle
     .c-loop__line {
-      right: 10%;
+      right: 5%;
     }
 
     // overlay
     .c-loop__overlay {
+      transition-timing-function: ease-in;
       transform-origin: center left;
     }
   }
@@ -209,16 +212,16 @@ $c-loop__circle-max-size: 75%;
   z-index: 2;
   height: 100%;
   width: 100%;
-  background-color: black;
-  transition: transform .5s linear;
+  background-color: #1a1a1a;
+  transition: transform .5s;
 }
 .c-loop__line {
   z-index: -1;
   position: absolute;
   border-radius: 100%;
-  top: 5%;
-  width: 180%;
-  height: 90%;
+  top: 2.5%;
+  width: 190%;
+  height: 95%;
   border: solid 2px $s-color-primary;
 }
 
