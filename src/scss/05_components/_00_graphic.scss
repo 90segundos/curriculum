@@ -131,6 +131,7 @@ $c-loop__circle-max-size: 75%;
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 100%;
+  overflow: hidden;
 
   // sizes
   @for $i from 1 through $c-loop__items {
