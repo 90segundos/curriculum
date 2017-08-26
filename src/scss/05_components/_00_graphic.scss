@@ -121,7 +121,6 @@ $c-loop__circle-max-size: 75%;
   &--upper {
     .c-loop__circle {
       z-index: 2;
-      border: solid round($c-loop__size/100) $s-color-primary;
     }
   }
 }
@@ -136,13 +135,94 @@ $c-loop__circle-max-size: 75%;
   // sizes
   @for $i from 1 through $c-loop__items {
     &--#{$i} {
-      width: $c-loop__circle-min-size + ($i * ($c-loop__circle-max-size - $c-loop__circle-min-size) / $c-loop__items);
-      height: $c-loop__circle-min-size + ($i * ($c-loop__circle-max-size - $c-loop__circle-min-size) / $c-loop__items);
+
+      $size: $c-loop__circle-min-size + ($i * ($c-loop__circle-max-size - $c-loop__circle-min-size) / $c-loop__items);
+
+      // dimensions
+      width: $size;
+      height: $size;
     }
     $i : $i + 1;
   }
+
+  // Activation
+  &.active {
+
+    // left mask
+    .c-loop__mask--1 {
+      .c-loop__overlay {
+        transition-delay: .5s;
+        transform: rotate(90deg);
+      }
+    }
+
+    // right mask
+    .c-loop__mask--2 {
+      .c-loop__overlay {
+        transform: rotate(180deg);
+      }
+    }
+
+  }
 }
 
+// mask: container of each half of the animated circle
+.c-loop__mask {
+  position: absolute;
+  top: -5%;
+  height: 110%;
+  width: 55%;
+  overflow: hidden;
+  z-index: 1;
+
+  // left mask - right mask
+  &--1 {
+    left: -5%;
+
+    // inner circle
+    .c-loop__line {
+      left: 10%;
+    }
+
+    // overlay
+    .c-loop__overlay {
+      transform-origin: center right;
+    }
+  }
+
+  &--2 {
+    right: -5%;
+
+    // inner circle
+    .c-loop__line {
+      right: 10%;
+    }
+
+    // overlay
+    .c-loop__overlay {
+      transform-origin: center left;
+    }
+  }
+}
+.c-loop__overlay {
+  z-index: 2;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  transition: transform .5s linear;
+}
+.c-loop__line {
+  z-index: -1;
+  position: absolute;
+  border-radius: 100%;
+  top: 5%;
+  width: 180%;
+  height: 90%;
+  border: solid 2px $s-color-primary;
+}
+
+
+// value
 .c-loop__value {
   display: block;
   position: absolute;
