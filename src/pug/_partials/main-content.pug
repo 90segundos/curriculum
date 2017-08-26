@@ -8,8 +8,6 @@ div(class="o-container c-main-content")
         //- lower
         div(class="c-loop__container--lower")
           div(class="c-loop__circle c-loop__circle--1")
-          
-        //  
           div(class="c-loop__circle c-loop__circle--2")
           div(class="c-loop__circle c-loop__circle--3")
           div(class="c-loop__circle c-loop__circle--4")  
@@ -20,25 +18,15 @@ div(class="o-container c-main-content")
         div(class="c-loop__container--upper")        
           
           //- circle 1
-          div(class="c-loop__circle c-loop__circle--1 c-loop__circle--70-percent" data-activate="ready")
-            //- left
-            div(class="c-loop__mask c-loop__mask--1")
-              div(class="c-loop__line")
-              div(class="c-loop__overlay")
-            //- right
-            div(class="c-loop__mask c-loop__mask--2")    
-              div(class="c-loop__line")
-              div(class="c-loop__overlay")
-                
-          //
-            div(class="c-loop__circle c-loop__circle--2" data-activate="ready")
-            div(class="c-loop__circle c-loop__circle--3" data-activate="ready")
-            div(class="c-loop__circle c-loop__circle--4" data-activate="ready")  
-            div(class="c-loop__circle c-loop__circle--5" data-activate="ready")
-            div(class="c-loop__circle c-loop__circle--6" data-activate="ready")
+          +circle(6,60)
+          +circle(5,70)
+          +circle(4,65)
+          +circle(3,80)
+          +circle(2,75)
+          +circle(1,60)
         
         //- values
-        div(class="c-loop__container--values")
+        div(class="c-loop__container--values" data-activate="ready")
           span(class="c-loop__value c-loop__value--1") 
             span(class="c-loop__value-container") 0% 
           span(class="c-loop__value c-loop__value--2") 

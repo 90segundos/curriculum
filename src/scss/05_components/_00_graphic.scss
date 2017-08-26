@@ -124,6 +124,23 @@ $c-loop__circle-max-size: 75%;
       z-index: 2;
     }
   }
+
+  // values
+  &--values {
+    z-index: 10;
+
+    .c-loop__value {
+      opacity: 0;
+      transition: opacity 100ms ease;
+      transition-delay: 1s;
+    }
+
+    &.active {
+      .c-loop__value {
+        opacity: 1;
+      }
+    }
+  }
 }
 
 .c-loop__circle {
@@ -151,18 +168,21 @@ $c-loop__circle-max-size: 75%;
   $i:0;
   @while $i <= 100 {
     @if $i <= 50 {
-      &--#{$i}-percent.active {
+      &--percent-#{$i}.active {
         .c-loop__mask--2 .c-loop__overlay {
+          transition: transform .1s ease-out;
           transform: rotate( $i * 360 / 100deg );
         }
       }
     }
     @else {
-      &--#{$i}-percent.active {
+      &--percent-#{$i}.active {
         .c-loop__mask--2 .c-loop__overlay {
+          transition: transform .5s ease-in;
           transform: rotate( 180deg );
         }
         .c-loop__mask--1 .c-loop__overlay {
+          transition: transform .5s ease-out;
           transition-delay: .5s;
           transform: rotate( ($i - 50) * 360deg / 100 );
         }
@@ -193,7 +213,6 @@ $c-loop__circle-max-size: 75%;
 
     // overlay
     .c-loop__overlay {
-      transition-timing-function: ease-out;
       transform-origin: center right;
     }
   }
@@ -208,7 +227,6 @@ $c-loop__circle-max-size: 75%;
 
     // overlay
     .c-loop__overlay {
-      transition-timing-function: ease-in;
       transform-origin: center left;
     }
   }
@@ -218,7 +236,6 @@ $c-loop__circle-max-size: 75%;
   height: 100%;
   width: 100%;
   background-color: #1a1a1a;
-  transition: transform .5s;
 }
 .c-loop__line {
   z-index: -1;
@@ -233,6 +250,7 @@ $c-loop__circle-max-size: 75%;
 
 // value
 .c-loop__value {
+  z-index: 3;
   display: block;
   position: absolute;
   height: 50%;
