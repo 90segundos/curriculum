@@ -53,6 +53,16 @@ $o-layout__breakpoints: (
       margin-right: 0;
   }
 
+  &--full-width {
+    > .o-col:first-child {
+      padding-left: 0;
+    }
+
+    > .o-col:last-child {
+      padding-right: 0;
+    }
+  }
+
   &--align-self-stretch {
     align-self: stretch;
   }
