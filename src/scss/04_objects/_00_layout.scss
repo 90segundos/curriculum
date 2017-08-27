@@ -25,23 +25,32 @@ $o-layout__breakpoints: (
       padding: 0 $o-layout__gutter;
     }
   }
-
-  &--no-gutter {
-    padding: 0;
-  }
-
 }
 
 .o-row {
   margin-left: -$o-layout__gutter;
   margin-right: -$o-layout__gutter;
-  padding-bottom: $o-layout__gutter;
   display: flex;
   flex: 1 0 auto;
   flex-wrap: wrap;
 
   &:last-child {
     padding-bottom: 0;
+  }
+
+  &--no-gutter {
+    margin-left: 0;
+    margin-right: 0;
+
+    > .o-col {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  &--no-margin {
+      margin-left: 0;
+      margin-right: 0;
   }
 
   &--align-self-stretch {
