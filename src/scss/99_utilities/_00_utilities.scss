@@ -90,6 +90,22 @@ $u-debug : false;
   margin: 0;
 }
 
+.u-no-margin--top {
+  margin-top: 0;
+}
+
+.u-no-margin--left {
+  margin-left: 0;
+}
+
+.u-no-margin--bottom {
+  margin-bottom: 0;
+}
+
+.u-no-margin--right {
+  margin-right: 0;
+}
+
 // Padding
 .u-no-padding {
   padding: 0;

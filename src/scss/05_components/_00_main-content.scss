@@ -11,6 +11,8 @@
   padding-bottom: $s-gutter;
 }
 
+
+// Section
 .c-section {
 
   &:after {
@@ -25,5 +27,37 @@
     &:after {
       border-bottom-color: transparent;
     }
+  }
+}
+
+// Article
+.c-article {
+
+}
+
+.c-article__header {
+  background-color: #282828;
+  align-items: center;
+  justify-content: space-between;
+  padding: $s-gutter;
+}
+
+  .c-article__number {
+    color: $s-color-grey-80;
+    display: block;
+    padding-bottom: $s-gutter / 4;
+  }
+
+  .c-article__header-vector {
+    height: 50px;
+    width: auto;
+  }
+
+.c-article__content {
+  background-color: #202020;
+  padding: $s-gutter;
+
+  &:last-child {
+    padding-bottom: $s-gutter;
   }
 }
