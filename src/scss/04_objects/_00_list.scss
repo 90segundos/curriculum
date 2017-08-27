@@ -1,0 +1,31 @@
+// Object
+// List
+
+/* ---------------- [ Variables ] ---------------- */
+
+
+
+/* ---------------- [ style ] ---------------- */
+
+.o-list {
+
+  list-style-type: square;
+
+  .o-list {
+    list-style-type: '>  '
+  }
+
+  &--indent {
+    padding-left: $s-gutter;
+  }
+  &--vertical {
+    .o-list__item {
+      display: block;
+    }
+  }
+}
+
+.o-list__item {
+  color: $s-color-grey-50;
+  line-height: 1.5em;
+}
