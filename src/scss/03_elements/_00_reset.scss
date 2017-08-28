@@ -28,6 +28,7 @@ h6 {
   font-weight: 400;
   font-family: $s-font-heading;
   margin-top: 0;
+  margin-bottom: 1.5em;
 }
 
 a {
@@ -38,7 +39,6 @@ a {
 
 p {
   color: $s-text-color--grey;
-  margin-top: 0;
 
   a {
     @include transition(color);
@@ -47,6 +47,11 @@ p {
       color: $s-color-light;
     }
   }
+}
+
+strong {
+  font-weight: inherit;
+  color: $s-color-grey-30;
 }
 
 ul {

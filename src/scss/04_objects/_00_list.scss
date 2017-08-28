@@ -8,11 +8,17 @@
 /* ---------------- [ style ] ---------------- */
 
 .o-list {
-
-  list-style-type: square;
+  list-style-type: '-  ';
 
   .o-list {
-    list-style-type: '>  '
+    list-style-type: '-  ';
+    .o-list__item:first-child {
+      padding-top: .5em;
+    }
+  }
+
+  &--no-bullets {
+    list-style-type: none;
   }
 
   &--indent {
@@ -28,4 +34,5 @@
 .o-list__item {
   color: $s-color-grey-50;
   line-height: 1.5em;
+  margin-bottom: .5em;
 }

@@ -33,6 +33,7 @@ $o-layout__breakpoints: (
   display: flex;
   flex: 1 0 auto;
   flex-wrap: wrap;
+  position: relative;
 
   &:last-child {
     padding-bottom: 0;
@@ -54,6 +55,7 @@ $o-layout__breakpoints: (
   }
 
   &--full-width {
+
     > .o-col:first-child {
       padding-left: 0;
     }
@@ -85,6 +87,10 @@ $o-layout__breakpoints: (
   &--flex {
     display: flex;
     flex: 1 1 auto;
+  }
+
+  &--flow-column {
+    flex-flow: column;
   }
 
   &--align-self-stretch {

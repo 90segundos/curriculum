@@ -10,11 +10,4 @@
 .o-section {
   padding-top: $s-gutter;
   padding-bottom: $s-gutter;
-
-  // Responsive
-  @media (min-width: map-get($s-breakpoints,'sm')) {
-    padding-top: $s-gutter * 2;
-    padding-bottom: $s-gutter * 2;
-  }
-
 }
