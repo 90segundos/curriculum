@@ -15,6 +15,7 @@ body {
   @include font-size($s-font-size-sm);
   font-weight: 300;
   letter-spacing: .5px;
+  line-height: 1.4;
   //-webkit-font-smoothing: antialiased;
   //-moz-osx-font-smoothing: grayscale;
 }

@@ -7,7 +7,8 @@
 /*----------------[ style ]----------------*/
 
 .c-main-content {
-
+  padding-top: $s-gutter;
+  padding-bottom: $s-gutter;
 }
 
 
@@ -18,14 +19,15 @@
     display: block;
     width: 100%;
     content: '';
-    margin: 0 $s-gutter;
     padding-top: $s-gutter;
+    padding-bottom: $s-gutter;
     border-bottom: 1px solid $s-color-grey-90;
   }
 
   &--no-border,
   &:last-child {
     &:after {
+      display: none;
       border-bottom-color: transparent;
     }
   }
