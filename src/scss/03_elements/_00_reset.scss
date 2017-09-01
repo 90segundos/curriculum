@@ -44,6 +44,7 @@ p {
   a {
     @include transition(color);
     color: $s-color-grey-30;
+    text-decoration: underline;
     &:hover {
       color: $s-color-light;
     }
