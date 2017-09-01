@@ -64,4 +64,10 @@ $c-heading__font-size--3: $s-font-size-xs;
     }
   }
 
+  &--no-decoration {
+    &:after {
+      display: none;
+    }
+  }
+  
 }

@@ -1,6 +1,6 @@
 mixin circle(order,percent)
   //- circle 1
-  div(class="c-loop__circle c-loop__circle--"+order class="c-loop__circle--percent-"+percent data-activate="ready")
+  div(class="c-loop__circle c-loop__circle--"+order class="c-loop__circle--percent-"+percent )
     
     //- left
     div(class="c-loop__mask c-loop__mask--1")
@@ -22,6 +22,6 @@ mixin circle-value(value)
 
 mixin percentBar(title,percent)
   li(class="c-bar-graph__item")
-    div(class="c-bar-graph__inner-bar c-bar-graph__inner-bar--"+percent  data-activate="ready")
+    div(class="c-bar-graph__inner-bar c-bar-graph__inner-bar--"+percent  )
       span(class="c-bar-graph__bar-title")= title
     span(class="c-bar-graph__bar-value")= percent + '%'

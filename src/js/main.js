@@ -1,6 +1,7 @@
 /* ---------------- [ variables ] ---------------- */
 
 var transition_time = 300;
+var window_height= $(window).height();
 
 /* ---------------- [ functions ] ---------------- */
 
@@ -8,7 +9,9 @@ function activate(element){
   if(!element){
     return false;
   }else{
-    $(element).addClass('active');
+    if(!$(element).hasClass('active')){
+      $(element).addClass('active');
+    }
   }
 }
 
@@ -60,9 +63,21 @@ function activateOnClick(trigger, target){
   // display ajax content
 }
 
+function activateOnOffset(element) {
+  $(window).on('scroll', function() {
+    var window_offset = window.pageYOffset;
+    var element_offset = $(element).offset().top;
+    if(window_offset + (window_height / 2) > element_offset) {
+      activate(element);
+    }
+  });
+}
+
 /* ---------------- [ init ] ---------------- */
 
 $(document).ready(function(){
   activateOnReady();
   buttonNavInit();
+  activateOnOffset('.c-bar-graph');
+  activateOnOffset('.c-loop');
 });

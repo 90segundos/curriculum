@@ -48,6 +48,15 @@ $c-loop__item-colors: (
 .c-bar-graph {
   position: relative;
   width: 100%;
+  // Width
+  $i: 0;
+  @while $i <= 100 {
+    &.active .c-bar-graph__inner-bar--#{$i} {
+      opacity: 1;
+      width: 0% + $i;
+    }
+    $i : $i + 5;
+  }
 }
 
   .c-bar-graph__list {
@@ -96,14 +105,9 @@ $c-loop__item-colors: (
           &--#{$i} {
             opacity: 0;
             width: 0% + $i - 5;
-            &.active {
-              opacity: 1;
-              width: 0% + $i;
-            }
           }
           $i : $i + 5;
         }
-
       }
 
       .c-bar-graph__bar-title {
@@ -123,6 +127,46 @@ $c-loop__item-colors: (
   height: $c-loop__size;
   width: $c-loop__size;
   position: relative;
+
+  &.active {
+
+    .c-loop__value {
+      opacity: 1;
+      &:after {
+        transition: height 500ms ease-out;
+        transition-delay: 1s;
+        height: 60%;
+      }
+    }
+
+    // percentage
+    $i:0;
+    @while $i <= 100 {
+      @if $i <= 50 {
+        &.active .c-loop__circle--percent-#{$i} {
+          .c-loop__mask--2 .c-loop__overlay {
+            transition: transform 1s ease-out;
+            transform: rotate( $i * 360deg / 100 );
+          }
+        }
+      }
+      @else {
+        &.active .c-loop__circle--percent-#{$i} {
+          .c-loop__mask--2 .c-loop__overlay {
+            transition: transform .5s ease-in;
+            transform: rotate( 180deg );
+          }
+          .c-loop__mask--1 .c-loop__overlay {
+            transition: transform .5s ease-out;
+            transition-delay: .5s;
+            transform: rotate( ($i - 50) * 360deg / 100 );
+          }
+        }
+      }
+      $i : $i + 5;
+    }
+
+  }
 }
 
 .c-loop__container {
@@ -157,17 +201,6 @@ $c-loop__item-colors: (
       transition: opacity 200ms ease;
       transition-delay: 1s;
     }
-
-    &.active {
-      .c-loop__value {
-        opacity: 1;
-        &:after {
-          transition: height 500ms ease-out;
-          transition-delay: 1s;
-          height: 60%;
-        }
-      }
-    }
   }
 }
 
@@ -190,33 +223,6 @@ $c-loop__item-colors: (
       height: $size;
     }
     $i : $i + 1;
-  }
-
-  // percentage
-  $i:0;
-  @while $i <= 100 {
-    @if $i <= 50 {
-      &--percent-#{$i}.active {
-        .c-loop__mask--2 .c-loop__overlay {
-          transition: transform 1s ease-out;
-          transform: rotate( $i * 360deg / 100 );
-        }
-      }
-    }
-    @else {
-      &--percent-#{$i}.active {
-        .c-loop__mask--2 .c-loop__overlay {
-          transition: transform .5s ease-in;
-          transform: rotate( 180deg );
-        }
-        .c-loop__mask--1 .c-loop__overlay {
-          transition: transform .5s ease-out;
-          transition-delay: .5s;
-          transform: rotate( ($i - 50) * 360deg / 100 );
-        }
-      }
-    }
-    $i : $i + 5;
   }
 
   // line color

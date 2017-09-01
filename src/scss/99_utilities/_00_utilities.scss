@@ -19,6 +19,13 @@ $u-debug : false;
   }
 }
 
+// Align
+@each $align in ('left', 'center', 'right') {
+  .u-align-#{$align} {
+    text-align: $align;
+  }
+}
+
 // Font weight
 .u-font-weight-normal {
   font-weight: 400;
