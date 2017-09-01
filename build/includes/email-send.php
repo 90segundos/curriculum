@@ -3,7 +3,7 @@
 use PHPMailer\PHPMailer\PHPMailer;
 
 // init
-require '../vendor/autoload.php';
+require '../vendor/phpmailer/vendor/autoload.php';
 
 // get data
 /*
@@ -17,9 +17,9 @@ $_POST = [
   'name'    => 'Alex',
   'surname' => 'Sotoca',
   'email'   => 'a.sotoca.pinilla@gmail.com',
-  'phone'   => '656055324';
-  'message' => 'Hola';
-]
+  'phone'   => '656055324',
+  'message' => 'Hola'
+];
 
 $sender = array();
 $sender['name'] = $_POST['name'];
@@ -46,7 +46,7 @@ $mailer->addAddress('a.sotoca.pinilla@gmail.com', 'Alejandro Sotoca');
 $mailer->Subject = 'Contacto desde la zumodelima.com - '.$sender['name'].' '.$sender['surname'];
 
 // Message
-$mail->msgHTML($message);
+$mailer->msgHTML($message);
 
 // Json ajax response
 $response = array();
@@ -61,8 +61,8 @@ if ( !$mailer->send() ) {
 }
 
 $response = [
-  'success' => $sucess,
-  'error'   => $error;
+  'success' => $success,
+  'error'   => $error
 ];
 // Send response to client
 echo json_encode($response);
