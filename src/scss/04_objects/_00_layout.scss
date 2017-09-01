@@ -114,6 +114,14 @@ $o-layout__breakpoints: (
     justify-content: center;
   }
 
+  &--justify-content-space-around {
+    justify-content: space-around;
+  }
+
+  &--justify-content-space-between {
+    justify-content: space-between;
+  }
+
   &--no-gutter {
     padding-left: 0;
     padding-right: 0;

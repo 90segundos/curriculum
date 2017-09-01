@@ -9,6 +9,7 @@
 .c-main-content {
   padding-top: $s-gutter;
   padding-bottom: $s-gutter;
+  @include transition(height, 500ms);
 }
 
 

@@ -1,0 +1,60 @@
+// Component
+// overlay
+
+/*----------------[ variables ]----------------*/
+
+$c-loading-animation__step-delay: 200ms;
+$c-loading-animation__initial-color: $s-color-grey-70;
+$c-loading-animation__highlight-color: $s-color-grey-20;
+
+@keyframes loading {
+  0% {
+    background-color: $c-loading-animation__initial-color;
+    transform: scaleY(1);
+  }
+  25%{
+    background-color: $c-loading-animation__highlight-color;
+    transform: scaleY(3);
+  }
+  50% {
+    background-color: $c-loading-animation__initial-color;
+    transform: scaleY(1);
+  }
+}
+
+/*----------------[ style ]----------------*/
+
+.c-overlay {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.c-loading-animation {
+  height: 50px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.c-loading-animation__bar {
+  height: 10px;
+  width: 2px;
+  background-color: $c-loading-animation__initial-color;
+
+  // animation
+  animation-name: loading;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: infinite;
+
+  @for $i from 1 through 3 {
+    &:nth-child(#{$i}) {
+      animation-delay: 0 + ($c-loading-animation__step-delay * $i);
+    }
+  }
+}

@@ -1,0 +1,67 @@
+// Component
+// footer
+
+/*----------------[ variables ]----------------*/
+
+// header
+$c-footer__height: $s-header-height;
+$c-footer__background-color: #282828;
+$c-footer__color: $s-color-grey-60;
+
+/*----------------[ style ]----------------*/
+
+.c-footer {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+
+  // Responsive
+  @each $key, $value in $o-layout__breakpoints {
+    @media (min-width: map-get($s-breakpoints,$key)) {
+      max-width: map-get($o-layout__breakpoints,$key);
+    }
+  }
+}
+
+.c-footer__container {
+  @include scalePadding(1);
+  height: $c-footer__height;
+  background-color: $c-footer__background-color;
+  color: $c-footer__color;
+
+}
+
+.c-logo {
+  font-family: $s-font-body;
+  font-weight: 300;
+  @include font-size(15px, 17px);
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  &:after {
+    content: " /";
+  }
+}
+
+// nav
+.c-footer-nav {
+
+}
+
+.c-footer-nav__list {
+
+}
+
+.c-footer-nav__link {
+  @include transition(color);
+  &:hover {
+    color: $s-color-light;
+  }
+}
+
+.c-footer-nav__item {
+  display: inline-block;
+  @include scalePadding(1);
+}

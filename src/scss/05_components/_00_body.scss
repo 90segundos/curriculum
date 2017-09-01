@@ -8,7 +8,9 @@ $c-body__background-color: #1a1a1a;
 /*----------------[ style ]----------------*/
 
 .c-body {
+  position: relative;
   padding-top: $s-header-height;
+  padding-bottom: $s-footer-height;
   background-color: $c-body__background-color;
   background-image: url('../img/pattern-4.png');
   color: $s-text-color;

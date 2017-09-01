@@ -9,10 +9,12 @@ include _includes/mixins.pug
 
 doctype
 html(lang='es')
+  
   head
     meta(charset='utf-8')
     title Alejandro Sotoca Pinilla | Portfolio
     link(rel="stylesheet" href="assets/css/main.css")
+      
   body(class="c-body "+theme)
     
     //- header
@@ -25,6 +27,7 @@ html(lang='es')
     include _partials/main-content.pug
     
     //- footer
+    include _partials/footer.pug
         
     // javascript
     script(type="text/javascript" src="assets/js/main.js")
