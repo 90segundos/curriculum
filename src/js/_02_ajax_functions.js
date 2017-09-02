@@ -1,11 +1,30 @@
 /* ---------------- [ variables ] ---------------- */
 
-var default_target = '.c-main-content';
+var
+  main_container = '.c-main-content',
+  block = false;
 
 /* ---------------- [ functions ] ---------------- */
 
 // Ajax functions
-function insertHtml(html, target = default_target){
+function loading(active){
+  if(active && block){
+    console.log('Already loading');
+    return false;
+  }else if(active && !block){
+    console.log('started loading');
+    activate('.c-overlay');
+    deactivate('.c-main-content');
+    block = true;
+  }else if(!active){
+    console.log('stopped loading');
+    deactivate('.c-overlay');
+    activate('.c-main-content');
+    block = false;
+  }
+}
+
+function insertHtml(html, target = main_container){
   if(typeof html !== 'undefined') {
     $(target).html(html);
   }
@@ -16,6 +35,8 @@ function insertHtml(html, target = default_target){
 }
 
 function showPage(data){
+  loading(true);
+  $(main_container).empty();
   $.ajax({
     url: 'includes/dispatcher.php',
     method: 'POST',
@@ -26,10 +47,25 @@ function showPage(data){
     },
     error: function(response){
       insertHtml('Error: No se ha podido recuperar el contenido solicitado.');
+    },
+    complete: function(){
+      loading(false);
     }
   });
 }
 
+function ajaxLinkInit(){
+  console.log('ajax links initialized');
+  $('[data-link-type=ajax]').on('click', function(event){
+    event.preventDefault();
+    href = $(this).attr('href');
+    var data = {
+      requestUrl : href
+    }
+    console.log('requestUrl: '+data.requestUrl);
+    showPage(data);
+  });
+}
 
 function sendEmail(data){
   $.ajax({
@@ -45,3 +81,9 @@ function sendEmail(data){
     }
   });
 }
+
+/* ---------------- [ init ] ---------------- */
+
+$(document).ready(function(){
+  ajaxLinkInit();
+});

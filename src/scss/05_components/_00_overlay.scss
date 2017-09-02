@@ -25,12 +25,20 @@ $c-loading-animation__highlight-color: $s-color-grey-20;
 /*----------------[ style ]----------------*/
 
 .c-overlay {
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
   height: 100%;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  opacity: 0;
+  @include transition(opacity);
+
+  &.active {
+    opacity: 1;
+  }
 }
 
 .c-loading-animation {

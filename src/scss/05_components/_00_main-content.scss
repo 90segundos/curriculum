@@ -7,9 +7,15 @@
 /*----------------[ style ]----------------*/
 
 .c-main-content {
+  position: relative;
   padding-top: $s-gutter;
   padding-bottom: $s-gutter;
-  @include transition(height, 500ms);
+  @include transition();
+  opacity: 0;
+
+  &.active {
+    opacity: 1;
+  }
 }
 
 

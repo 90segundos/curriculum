@@ -13,14 +13,16 @@ var gulp = require('gulp'),
 /* ---------------------[ directories ]----------------------- */
 
 var directories = {
-  'pug_watch':  ['src/pug/**/*.pug'],
-  'pug_src':    ['src/pug/*.pug'],
-  'pug_build':  'build',
-  'sass_watch': ['src/scss/**/*.scss'],
-  'sass_src':   ['src/scss/*.scss'],
-  'sass_build': 'build/assets/css',
-  'js_src':     ['src/js/**/*.js'],
-  'js_build':   'build/assets/js'
+  'pug_watch':        ['src/pug/**/*.pug'],
+  'pug_src':          ['src/pug/*.pug'],
+  'pug_build':        'build',
+  'pug_pages_src':    ['src/pug/_pages/*.pug'],
+  'pug_pages_build':  'build/pages',
+  'sass_watch':       ['src/scss/**/*.scss'],
+  'sass_src':         ['src/scss/*.scss'],
+  'sass_build':       'build/assets/css',
+  'js_src':           ['src/js/**/*.js'],
+  'js_build':         'build/assets/js'
 }
 
 /* ---------------------[ tasks ]----------------------- */
@@ -33,7 +35,17 @@ gulp.task('compile_pug', function buildHTML() {
     'compileDebug': true
   }))
   .pipe(gulp.dest(directories.pug_build))
-  .pipe(notify("HTML generated"));
+  .pipe(notify("HTML Index generated"));
+});
+
+gulp.task('compile_pug_pages', function buildHTML() {
+  return gulp.src(directories.pug_pages_src)
+  .pipe(pug({
+    'pretty':true,
+    'compileDebug': true
+  }))
+  .pipe(gulp.dest(directories.pug_pages_build))
+  .pipe(notify("HTML Inner pages generated"));
 });
 
 // sass
@@ -65,7 +77,7 @@ gulp.task('watch', function () {
 /* ---------------------[ task collections ]----------------------- */
 
 // build
-gulp.task('build', ['compile_pug','compile_sass', 'scripts']);
+gulp.task('build', ['compile_pug', 'compile_pug_pages', 'compile_sass', 'scripts']);
 
 // default
-gulp.task('default', ['compile_pug', 'compile_sass', 'scripts', 'watch']);
+gulp.task('default', ['compile_pug', 'compile_pug_pages', 'compile_sass', 'scripts', 'watch']);
