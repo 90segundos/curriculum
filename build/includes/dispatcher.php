@@ -17,12 +17,12 @@ $response = array(
 
 // validation
 if(!isset($_POST) && empty($_POST)){
-  $response['error'] = $_SERVER[__FILE__].': No se han recibido datos.';
+  $response['error'] = $_SERVER['PHP_SELF'].': No se han recibido datos.';
   exit();
 }
 // validate page
 if(!isset($_POST['requestUrl']) && empty($_POST['requestUrl'])){
-  $response['error'] = $_SERVER[__FILE__].': No se ha especificado la página requerida.';
+  $response['error'] = $_SERVER['PHP_SELF'].': No se ha especificado la página requerida.';
   exit();
 }
 
@@ -31,7 +31,7 @@ $filename = $_POST['requestUrl'].'.html';
 
 // Check existance
 if(!file_exists($page_folder_url.$filename)){
-  $response['error'] = $_SERVER[__FILE__].': La página solicitada no existe: '.$page_folder_url.$filename ;
+  $response['error'] = $_SERVER['PHP_SELF'].': La página solicitada no existe: '.$page_folder_url.$filename ;
   exit();
 }else{
   $response['html'] = phpRender($page_folder_url.$filename);

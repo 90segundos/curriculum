@@ -78,6 +78,5 @@ function activateOnOffset(element) {
 $(document).ready(function(){
   activateOnReady();
   buttonNavInit();
-  activateOnOffset('.c-bar-graph');
-  activateOnOffset('.c-loop');
+  activateOnOffset('[data-activate=scroll]');
 });

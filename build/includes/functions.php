@@ -5,8 +5,8 @@
 
 function phpRender($url){
   ob_start();
-  require($url);
+  include($url);
   $return = ob_get_contents();
-  ob_end_flush();
+  ob_end_clean();
   return $return;
 }
